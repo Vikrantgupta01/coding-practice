@@ -33,8 +33,9 @@ public class LinkList {
     }
 
     public void deleteNode(Node node){
+        size--;
         if(head.value==node.value){
-            head = null;
+            head = head.nextNode;
             return;
         }
         Node node1 = head.nextNode;
