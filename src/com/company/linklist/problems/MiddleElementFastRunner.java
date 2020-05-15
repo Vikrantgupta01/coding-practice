@@ -14,8 +14,9 @@ public class MiddleElementFastRunner {
         Node fast = node;
         Node slow = node;
         while (fast != null){
-            fast = fast.nextNode != null ? fast.nextNode.nextNode : null;
-            if(fast !=null){
+            fast = fast.nextNode ;
+            if( fast != null ){
+                fast = fast.nextNode ;
                 slow = slow.nextNode;
             }
         }

@@ -7,7 +7,7 @@ public class SubarrayWithGivenSum {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int noOfTestCases  = Integer.parseInt(sc.nextLine());
+        int noOfTestCases = Integer.parseInt(sc.nextLine());
 
 
         for (int k = 0; k < noOfTestCases; k++) {
@@ -20,29 +20,20 @@ public class SubarrayWithGivenSum {
             int[] arr = Stream.of(numbers.split(" "))
                     .mapToInt(token -> Integer.parseInt(token))
                     .toArray();
-            boolean found = false ;
-
-            for(int i =0 ; i < arr.length ; i++){
-                int  total = 0;
-
-                for (int j = i; j < arr.length; j++) {
-                    total += arr[j];
-                    if(total > sum){
-                        break;
-                    }
-                    if(total == sum){
-                        System.out.println((i+1) + " "+(j+1));
-                        found = true;
-                        break;
-                    }
+            int j = 0;
+            int total = 0;
+            for (int i = 0; i < arr.length; i++) {
+                total += arr[i];
+                if (total == sum) {
+                    System.out.println(i + "   " + j);
+                } else if (total > sum) {
+                    total -= arr[j++];
                 }
-                if(found)
-                    break;
+                if (total == sum) {
+                    System.out.println(i + "   " + j);
+                }
+            }
 
-            }
-            if(!found){
-                System.out.println(-1);
-            }
 
         }
         return;

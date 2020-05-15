@@ -52,6 +52,18 @@ public class LinkList {
         }
     }
 
+    public Node findNode(int i){
+        Node node = head;
+        while (node!=null){
+            if(node.value ==i){
+                return node;
+            }
+            node = node.nextNode;
+        }
+        return null;
+
+    }
+
     public void printList(){
         Node node = head;
         while (node !=null){

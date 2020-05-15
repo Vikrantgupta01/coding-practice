@@ -15,7 +15,7 @@ public class Test {
         int totalCases = Integer.parseInt(sc.nextLine());
 
         for (int z = 0; z < totalCases; z++) {
-
+            int[] arr = Stream.of(sc.nextLine().split(" ")).mapToInt(m->Integer.parseInt(m)).toArray();
         }*/
        int i = 493;
        Stack<Integer> list = new Stack<>();
