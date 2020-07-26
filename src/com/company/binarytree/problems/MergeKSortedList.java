@@ -6,6 +6,7 @@ import java.util.PriorityQueue;
 public class MergeKSortedList {
 
     public static void main(String[] args) {
+
         Comparator<ListNode> listNodeComparator = Comparator.comparingInt(ListNode::getHead);
         PriorityQueue<ListNode> listNodes = new PriorityQueue<>(listNodeComparator);
         listNodes.add(new ListNode(new int[]{1,5,9,13,17,21,25}));

@@ -1,6 +1,5 @@
 package com.company.bst.problems;
 
-import com.company.BinarySearch;
 
 public class BinarySearchTree {
 
@@ -53,12 +52,33 @@ public class BinarySearchTree {
         }
     }
 
+    public void preOrderTraversal(Node node){
+        System.out.println(node.getData());
+        if(node.getLeft()!=null){
+            preOrderTraversal(node.getLeft());
+        }
+        if(node.getRight()!=null){
+            preOrderTraversal(node.getRight());
+        }
+    }
+
+    public void postOrderTraversal(Node node){
+        if(node.getLeft()!=null){
+            postOrderTraversal(node.getLeft());
+        }
+        if(node.getRight()!=null){
+            postOrderTraversal(node.getRight());
+        }
+        System.out.println(node.getData());
+    }
+
     public  static BinarySearchTree getBinarySearchTree(){
         BinarySearchTree binarySearch = new BinarySearchTree();
         binarySearch.insert(new Node(10));
         binarySearch.insert(new Node(5));
         binarySearch.insert(new Node(1));
         binarySearch.insert(new Node(8));
+        binarySearch.insert(new Node(9));
         binarySearch.insert(new Node(20));
         binarySearch.insert(new Node(15));
         binarySearch.insert(new Node(25));
@@ -78,8 +98,10 @@ public class BinarySearchTree {
         binarySearch.insert(new Node(15));
         binarySearch.insert(new Node(25));
 
-        System.out.println(binarySearch);
+        //System.out.println(binarySearch);
 
-        binarySearch.inOrderTraversal(binarySearch.getRoot());
+        //binarySearch.inOrderTraversal(binarySearch.getRoot());
+        //binarySearch.preOrderTraversal(binarySearch.getRoot());
+        binarySearch.postOrderTraversal(binarySearch.getRoot());
     }
 }

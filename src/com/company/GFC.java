@@ -1,9 +1,10 @@
 package com.company;
 
+import java.util.Comparator;
+
 public class GFC {
 
-    static void printTwoElements(int arr[], int size)
-    {
+    static void printTwoElements(int arr[], int size) {
         int i;
         System.out.print("The repeating element is ");
 
@@ -15,6 +16,7 @@ public class GFC {
                 System.out.println(abs_val);
         }
 
+        Comparator<String> stringComparator = (o1, o2) -> {return 0;};
         System.out.print("And the missing element is ");
         for (i = 0; i < size; i++) {
             if (arr[i] > 0)
@@ -23,11 +25,12 @@ public class GFC {
     }
 
     // Driver code
-    public static void main(String[] args)
-    {
-        int arr[] = { 7, 3, 4, 5, 5, 6, 2 };
+    public static void main(String[] args) {
+        int arr[] = {7, 3, 4, 5, 5, 6, 2};
         int n = arr.length;
         printTwoElements(arr, n);
     }
+
+
 
 }

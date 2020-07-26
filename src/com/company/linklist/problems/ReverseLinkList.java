@@ -1,5 +1,8 @@
 package com.company.linklist.problems;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ReverseLinkList {
     public static void main(String[] args) {
         LinkList linkList = new LinkList();
@@ -20,5 +23,9 @@ public class ReverseLinkList {
         }
         linkList.setHead(prev);
         linkList.printList();
+        int i = 2147483647;
+
+        Map<Integer,Integer>   integerIntegerMap = new HashMap<>();
+        integerIntegerMap.getOrDefault(1,0);
     }
 }

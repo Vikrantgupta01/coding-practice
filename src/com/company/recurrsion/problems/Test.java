@@ -1,9 +1,6 @@
 package com.company.recurrsion.problems;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class Test {
 
@@ -24,6 +21,7 @@ public class Test {
            i = i/10;
        }
         System.out.println(list);
+
 
     }
 }
