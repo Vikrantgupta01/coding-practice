@@ -9,29 +9,31 @@ public class LeftView {
 
         Stack<Node> global = new Stack<>();
         Stack<Node> local = new Stack<>();
-        local.push(binarySearchTree.getRoot());
-        int level = 0;
-        int levelCounter = 0;
-        while (!local.isEmpty()){
-            while (!local.isEmpty()){
-                global.push(local.pop());
-            }
-            System.out.println("level "+ (++level));
+        global.push(binarySearchTree.getRoot());
+
+        while (!global.isEmpty()){
+            boolean isFirstElement = true;
             while (!global.isEmpty()){
                 Node node = global.pop();
-                if(levelCounter ==0)
+                if(isFirstElement){
                     System.out.print(node.getData()+"   ");
-
-                levelCounter++;
-                if(node.getLeft()!=null){
-                    local.push(node.getLeft());
+                    isFirstElement = false;
                 }
                 if(node.getRight()!=null){
                     local.push(node.getRight());
                 }
+                if(node.getLeft()!=null){
+                    local.push(node.getLeft());
+                }
+
             }
-            System.out.println();
-            levelCounter = 0 ;
+
+            while (!local.isEmpty()){
+                global.push(local.pop());
+            }
+
+
+
         }
 
     }
