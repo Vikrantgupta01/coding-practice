@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Test2 {
@@ -10,6 +11,8 @@ public class Test2 {
 
         checkWinner();
 
+        LinkedHashMap<String,String> map = new LinkedHashMap<>();
+        System.out.println(map);
 
     }
 
